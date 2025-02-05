@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ecf8fd;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #afcbd5;
+            padding: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            /* color: #ecf8fd; */
+            position: relative;
+        }
+
+        .name {
+            background: linear-gradient(to right, #ecf8fd, #c7e7f5);
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            /* color: #ecf8fd; */
+            font-size: 18px;
+            padding: 10px;
+            background: linear-gradient(to right, #ecf8fd, #c7e7f5);
+            background-clip: text;
+            color: transparent;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #272838;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 1px;
+            background-color: #ecf8fd;
+            margin: 5px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 60px;
+            padding: 50px 10px;
+        }
+
+        .card {
+            background: #afcbd5;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: fill;
+            /* object-fit: fill; */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        
+        .card h3 {
+            color: #272838;
+            margin: 15px;
+            font-size: 18px;
+        }
+
+        .card p {
+            color: #272838;
+            font-size: 15px;
+            font-style: oblique;
+            font-weight: bold;
+        }
+
+        /* TABLET */
+        @media (max-width: 768px) {
+            body {
+                background-size: cover; 
+                background-attachment: scroll;
+                height: 100%;
+            }
+        }
+
+        /* PHONE */
+        @media (max-width :530px) {
+            .nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background: rgba(0, 0, 0, 0.8);
+                padding: 10px;
+                border-radius: 5px;
+                width: 200px;
+            }
+
+            .nav a:hover {
+            color: #afcbd5;
+            }
+
+            .nav.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .card {
+              height: 10%;
+              width: 330px;
+            }
+        }
+
+    </style>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav').classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="name">Joshua</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">About Me</a>
+            <a href="#">Hobbies</a>
+            <a href="#">My Crush</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="card">
+            <img src="img1.jpg" alt="Waguri Kaoruki Eating">
+            <h3>~About Me!~</h3>
+            <p>Hii!, my name is Joshua Deñado, just a simple person living-life... nothing fancy. I wake up, breather, occasionally trip over invisible objects, and spend an unreasonable time wondering :<<</p>
+        </div>
+        <div class="card">
+            <img src="img2.jpg" alt="Waguri Kaoruki">
+            <h3>--Hobbies-></h3>
+            <p>My hobbies include overthinking, pretending to be productive, and mastering the art of doing absolutely nothing with great enthusiasm. <br> <br> "Simplicity is key, and I've lost that key many times this week."</p>
+        </div>
+        <div class="card">
+            <img src="img3.jpg" alt="Waguri Kaoruki">
+            <h3>✨My Crush!✨</h3>
+            <p>Wala!... wala akong crush kasi focus muna ako sa goal ko :>></p>
+        </div>
+    </div>
+</body>
+</html>
